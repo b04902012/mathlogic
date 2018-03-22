@@ -117,15 +117,34 @@ E-mail: \href{mailto:b04902012@ntu.edu.tw}{\texttt{b04902012@ntu.edu.tw}}\\
     All formulas are tautology.
 \item
     The formulas are constructed as following:
-    $\alpha_k = p_{k,1}\lor p_{k,2}\lor p_{k,3}\lor p_{k,4}
-                \bigwedge\limits_{1\leq i<j\leq 4}\neg(p_{k,i}\land p_{k,j}
-                \bigwedge\limits_{1\leq i\leq 4}
-                        )
+    \begin{align*}
+    \alpha_k = &\bigvee\limits_{1\leq i\leq n-1}p_{k,i}\\
+               &\bigwedge\limits_{1\leq i<j\leq n-1}\neg(p_{k,i}\land p_{k,j})\\
+               &\bigwedge\limits_{1\leq l\leq n}\bigwedge\limits_{1\leq i\leq n-1}\neg(p_{k,i}\land p_{l,i})\\
+            X=&\{\alpha_k|1\leq k\leq n\}
+    \end{align*}
+    $X$ corresponds to $(n-1)$-colorability of an $n$-clique $G$. The construction is a generalized version of the formula set in the proof of \textit{Lemma 3.6}. \\
+    $X$ itself is trivially unsatisfiable, since an $n$-clique is not $(n-1)$-colorable. However, every proper subset of $X$ is satisfiable. Intuitively, a proper subset corresponds to a proper induced subgraph of $G$, which is an $m$-clique with $m<n$ and is thus $(n-1)$-colorable.\\
+    Here gives an truth assignment for a proper set $Y$ of $X$. Let $|Y|=m$, $m<n$. W.L.O.G, assume that $Y=\{\alpha_k|1\leq k\leq m\}$. A satisfying assignment is
+        \begin{equation*}
+            p_{k,i}=
+                \begin{cases}
+                \text{T} &\text{, if } k\leq m \text{ and } k=i.\\
+                \text{F} &\text{, otherwise.}\\
+                \end{cases}
+        \end{equation*}
+    That is, color the vertex $i$ inside the subgraph with color $i$, and color the vertex outside the subgraph with nothing.
 
-            
+\item
+    \begin{align*}
+        X\models\alpha&\Rightarrow X\cup \{\neg\alpha\}\text{ is not satisfiable}\\
+                      &\Rightarrow X\cup \{\neg\alpha\}\text{ is not finitely satisfiable}\\
+                      &\Rightarrow \exists\text X'\subseteq X\cup\{\neg\alpha\}\text{ s.t. }X'\text{ is finite and non-satisfiable}\\
+                      &\Rightarrow X'\cup\{\neg\alpha\}\text{ is a finite subset of $X$ and non-satisfiable}\\
+                      &\Rightarrow X'\setminus\{\neg\alpha\}\models\alpha
+    \end{align*}
+    i.e. the set $X'\setminus\{\neg\alpha\}$ is the desired $X_0$.
 
-            
-    \end{enumerate}
 \end{enumerate}
 
 \end{document}
