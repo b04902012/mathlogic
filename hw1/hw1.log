@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Arch Linux) (preloaded format=xelatex 2018.3.9)  16 MAR 2018 20:10
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Arch Linux) (preloaded format=xelatex 2018.3.19)  22 MAR 2018 20:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1225,21 +1225,22 @@ File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
 ) [1
 
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 122.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 122.
- (./hw1.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 122.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 122.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 122.
+] [2]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 150.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 150.
+
+(./hw1.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 150.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 150.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 150.
  ) 
 Here is how much of TeX's memory you used:
- 35119 strings out of 493007
- 703077 string characters out of 6140076
- 787143 words of memory out of 5000000
- 38708 multiletter control sequences out of 15000+600000
- 535333 words of font info for 48 fonts, out of 8000000 for 9000
+ 35127 strings out of 493007
+ 703207 string characters out of 6140075
+ 788143 words of memory out of 5000000
+ 38712 multiletter control sequences out of 15000+600000
+ 535986 words of font info for 52 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 54i,5n,73p,10386b,383s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,13n,73p,10386b,477s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on hw1.pdf (1 page).
+Output written on hw1.pdf (2 pages).
