@@ -1,0 +1,90 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage{../mysty}
+\renewcommand{\lessontitle}{First-order logic, part~II}
+\renewcommand{\fulltitle}{Homework 3}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% START DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\date{}
+
+
+
+
+\begin{center}
+{\Large {\bf \fulltitle}}
+\end{center}
+\hfill{\bf B04902012 Han Sheng, Liu}
+\vspace{0.7cm}
+
+
+\paragraph*{Question 1.}
+Construct a structure $\cA$ and a formula $\varphi$ such that
+$\cA \models \forall x \exists y \ \varphi$,
+but $\cA \not\models \exists x \forall y \ \varphi$.
+
+
+
+\paragraph*{Question 2.}
+There are many ways to ``encode''
+propositional calculus in first-order logic.
+One way is to view a propositional variable $p$ as
+a relation symbol of arity $0$
+as explained in the class.
+
+Here is another way.
+Let $L = \{c\}$ be a vocabulary that consists of only one
+constant symbol $c$.
+Given a propositional formula $\alpha$ 
+using variables $p_1,\ldots,p_k$,
+consider the FO formula $\Phi$
+obtained from $\alpha$ by 
+changing every $p_i$ with an atomic $x_i \approx c$.
+For example, if $\alpha$ is 
+$$p_1\wedge \neg p_2,$$
+then $\Phi$ is 
+$$
+(x_1 \approx c) \ \wedge \ \neg (x_2 \approx c).
+$$
+Prove that
+$\alpha$ is satisfiable (in the sense of propositional calculus)
+if and only if $\Phi$ is.
+
+
+\paragraph*{Question 3.}
+Consider a sentence of the following form:
+\begin{eqnarray*}
+\Phi & := & \exists x_1 \cdots \exists x_n \ \forall y_1 \cdots \forall y_m \ \varphi,
+\end{eqnarray*}
+where $\varphi$ is quantifier free and does {\em not} contain any function and constant symbol, and $n,m \geq 1$.
+
+Prove that if $\Phi$ is satisfiable, then there is a structure $\cA$ that satisfies $\Phi$ with $|A|\leq n$. 
+
+
+\paragraph*{Question 4.}
+Let $h:\cA \to \cB$ be a homomorphism.
+Define a relation $\sim_h$ on $A$ as follows:
+$a \sim_h a'$ if and only if $h(a)=h(a')$.
+Prove that $\sim_h$ is an equivalence relation on $A$,
+and that $\sim_h$ is, in fact, a congruence in $\cA$.
+
+\paragraph*{Question 5.}
+Let $h:\cA\to\cB$ be a strong and surjective homomorphism,
+and let $\cA/\!\!\sim_h$ be the factor of $\cA$ modulo $\sim_h$.
+Define a function $\xi:A/\!\!\sim_h \to B$,
+where $\xi([a]_{\sim_h}) = h(a)$.
+Prove that $\xi$ is an isomorphism.
+
+
+
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% END OF DOCUMENT %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
