@@ -28,8 +28,14 @@ $\cA \models \forall x \exists y \ \varphi$,
 but $\cA \not\models \exists x \forall y \ \varphi$.
 \begin{framed}
 \solution
-Consider $A=\{\T, \F\}$, $\varphi=x\approx y$. \\
-For every $x$, there must exist $y$ such that $x \approx$
+
+Consider $A=\{\T, \F\}$, $\varphi=x\approx y$. 
+
+For every $x$, there must exist $y$ such that $x \approx y$.
+Just simply pick $x$ for $y$.
+
+However, there does not exist $x$ such that for every $y$, $x\approx y$.
+If $y=\T$, then $x$ must be $\T$; if $y=\F$, then $x$ must be $\F$.
 \end{framed}
 
 
@@ -59,6 +65,38 @@ Prove that
 $\alpha$ is satisfiable (in the sense of propositional calculus)
 if and only if $\Phi$ is.
 
+\begin{framed}
+\solution
+
+    Note that $\Phi$ and $\alpha$ are actually the same after replacing those $(x_i\approx c)$ with $p_i$ in $\Phi$.
+
+\noindent$\Rightarrow$:
+
+    $\alpha$ is satisfiable.
+    Thus, there exists an assignment $w$ that satisfies $\alpha$.
+
+    Now consider the following interpretation $(\cA,\val)$.
+
+    $A=\{\T, \F\}$, $c=\T$, $\val(x_i)=w(p_i)$.
+
+    Then $(\cA,\val)\models(x_i\approx c)$ if and only if $w(p_i)=\T$.
+
+    \begin{align*}
+    w\models\alpha &\Rightarrow w(\alpha)=\T\\
+                  &\Rightarrow (\cA,\val)\models\Phi
+    \end{align*}
+
+\noindent$\Leftarrow$:
+
+    $\Phi$ is satisfiable.
+    Thus, there exists an interpretation $(\cA, \val)$ satisfying $\Phi$.
+
+    Now consider the following assignment $w$ for $\alpha$.
+
+    $w(p_i)=\T$ if and only if $(\cA, \val)\models (x_i\approx c)$.
+
+    Thus, $(\cA, \val)\models 
+\end{framed}
 
 \paragraph*{Question 3.}
 Consider a sentence of the following form:
