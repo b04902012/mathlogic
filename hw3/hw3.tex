@@ -14,7 +14,6 @@
 
 
 
-
 \begin{center}
 {\Large {\bf \fulltitle}}
 \end{center}
@@ -70,6 +69,8 @@ if and only if $\Phi$ is.
 
     Note that $\Phi$ and $\alpha$ are actually the same after replacing those $(x_i\approx c)$ with $p_i$ in $\Phi$.
 
+    Also note that satisfying assignments and models have the same recursive definition.
+
 \noindent$\Rightarrow$:
 
     $\alpha$ is satisfiable.
@@ -81,10 +82,7 @@ if and only if $\Phi$ is.
 
     Then $(\cA,\val)\models(x_i\approx c)$ if and only if $w(p_i)=\T$.
 
-    \begin{align*}
-    w\models\alpha &\Rightarrow w(\alpha)=\T\\
-                  &\Rightarrow (\cA,\val)\models\Phi
-    \end{align*}
+    Thus, $w\models\alpha\Rightarrow(\cA, \val)\models\Phi$, because satisfying assignments and models have the same recursive definition.
 
 \noindent$\Leftarrow$:
 
@@ -95,7 +93,7 @@ if and only if $\Phi$ is.
 
     $w(p_i)=\T$ if and only if $(\cA, \val)\models (x_i\approx c)$.
 
-    Thus, $(\cA, \val)\models 
+    Thus, $(\cA, \val)\models \Phi \Rightarrow w \models \alpha$, because satisfying assignments and models have the same recursive definition.
 \end{framed}
 
 \paragraph*{Question 3.}
@@ -106,6 +104,24 @@ Consider a sentence of the following form:
 where $\varphi$ is quantifier free and does {\em not} contain any function and constant symbol, and $n,m \geq 1$.
 
 Prove that if $\Phi$ is satisfiable, then there is a structure $\cA$ that satisfies $\Phi$ with $|A|\leq n$. 
+\begin{framed}
+\solution
+
+$\Phi$ is a sentence, so each variable in $\Phi$ is one of the $x_i$ or $y_i$.
+
+Let $\Phi'= \forall y_1 \cdots \forall y_m \ \varphi$, then every model of $\Phi$ is a model of $\Phi'$, and vice versa.
+
+Assume that $\Phi'$ is satisfiable, then there is a interpretation $(\cA', \val)\models\Phi'$.
+
+Let $X=\{\val(x_i)\}$. Consider the substructure $\cA$ such that $A=A'\cap X$. It is obvious that $|A|\leq n$. Now prove that $(\cA, \val)\models \Phi'$
+
+\begin{align*}
+(\cA', \val) \models \Phi' &\Rightarrow \forall\ Y\in A'^{m}, (\cA', \val[\bar{y}\mapsto Y])\models \phi\\
+                           &\Rightarrow \forall\ Y\in A^{m}, (\cA, \val[\bar{y}\mapsto Y])\models \phi \text{ (because $A\subseteq A'$)}\\
+                           &\Rightarrow (\cA, \val) \models \Phi'\\
+                           &\Rightarrow (\cA, \val) \models \Phi
+\end{align*}
+\end{framed}
 
 
 \paragraph*{Question 4.}
@@ -115,6 +131,39 @@ $a \sim_h a'$ if and only if $h(a)=h(a')$.
 Prove that $\sim_h$ is an equivalence relation on $A$,
 and that $\sim_h$ is, in fact, a congruence in $\cA$.
 
+\begin{framed}
+\solution
+
+\begin{itemize}
+\item Reflexive
+
+$\forall a\in A$, $h(a)=h(a)$.
+
+Thus, $\forall a\in A$, $a\sim_ha$.
+
+\item Symmetric
+\begin{flalign*}
+\forall a,\ b\in A,\ a\sim_hb&\Rightarrow h(a)=h(b)\\
+        &\Rightarrow h(b)=h(a)\\
+        &\Rightarrow b\sim_ha
+\end{flalign*}
+
+\item Transitive
+\begin{flalign*}
+\forall a,\ b,\ c\in A,\ a\sim_hb,\ b\sim_hc&\Rightarrow h(a)=h(b),\ h(b)=h(c)\\
+                   &\Rightarrow h(a)=h(c)\\
+                   &\Rightarrow a\sim_hc
+\end{flalign*}
+\item Congruence
+\begin{flalign*}
+\forall a,\ b\in A,\ a\sim_hb&\Rightarrow h(a)=h(b)\\
+                             &\Rightarrow f(h(a))=f(h(b))\\
+                             &\Rightarrow h(f(a))=h(f(b))\\
+                             &\Rightarrow f(a)\sim_hf(b)
+\end{flalign*}
+\end{itemize}
+\end{framed}
+
 \paragraph*{Question 5.}
 Let $h:\cA\to\cB$ be a strong and surjective homomorphism,
 and let $\cA/\!\!\sim_h$ be the factor of $\cA$ modulo $\sim_h$.
@@ -122,6 +171,26 @@ Define a function $\xi:A/\!\!\sim_h \to B$,
 where $\xi([a]_{\sim_h}) = h(a)$.
 Prove that $\xi$ is an isomorphism.
 
+\begin{framed}
+\solution
+Let $\cC=\cA/\sim_h$.
+\begin{itemize}
+\item $\xi$ is a homomorphism
+
+$\forall R,\ f,\ c\in L$,
+
+\begin{flalign*}
+\forall \bar{a}\in A^{ar(f)}\, \xi(f^\cC([\bar{a}]_{\sim_h})&=\xi([f^\cA(\bar{a})]_{\sim_h})\\
+                                                            &=h(f^\cA(\bar{a}))\\
+                                                            &=f^\cB(h(\bar{a}))\\
+                                                            &=f^\cB(\xi([\bar{a}]_{\sim_h}))
+
+\end{flalign*}
+\end{itemize}
+
+
+
+\end{framed}
 
 
 
